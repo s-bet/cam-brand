@@ -37,12 +37,15 @@ CULTIVAÇÃO:    Em construção — brand equity ainda sendo formado
 
 ```
 CATEGORIA:   Inteligência Operacional do Mundo Físico
-SUBCATEGORIA: Auditoria Visual Operacional Contínua
+SUBCATEGORIA: Inteligência de Performance Operacional
 
 PARA:        Diretores de Operações de empresas com operações físicas distribuídas
-QUE:         Não conseguem ter visibilidade real em tempo real sem auditor presencial
+QUE:         Não conseguem obter KPIs de performance — fluxo, fila, ocupação,
+             produtividade — do ambiente físico sem aumentar custo de campo
 A:           GoDados.cam é a camada de software que lê as câmeras que você já tem
-E ENTREGA:   KPIs de conformidade operacional em tempo real, sem hardware novo
+E ENTREGA:   KPIs de performance operacional em tempo real (fluxo, fila, ocupação,
+             produtividade), transformando Vídeo → Evento → Indicador → Decisão,
+             sem hardware novo
 AO CONTRÁRIO: De supervisão de campo, mystery shoppers e checklists autodeclarados
 ```
 
@@ -176,11 +179,16 @@ ANTI-PADRÕES (nunca usar):
   → Hype de IA: "IA avançada", "machine learning de ponta"
   → Promessas vagas: "melhore sua operação"
   → Tom infantil: emojis em excesso, linguagem informal demais
+  → "conformidade" e "auditoria" como promessa principal — são subproduto,
+    não a proposta central de valor
 
 PADRÃO (sempre usar):
   → Números específicos antes de adjetivos
   → "câmeras que você já tem" — nunca vender hardware
-  → Antes/depois operacional concreto
+  → Vocabulário de performance: fluxo, fila, ocupação, produtividade,
+    gargalo, decisão proativa — não vocabulário de compliance
+  → O mecanismo em 4 palavras quando explicar o produto: Vídeo → Evento → Indicador → Decisão
+  → Antes/depois operacional concreto (ex: "23% ocupação vs 67% benchmark")
   → Perguntas que o comprador não consegue responder com confiança
 ```
 
@@ -189,10 +197,11 @@ PADRÃO (sempre usar):
 **Principal:** `Inteligência Operacional do Mundo Físico`
 
 **Alternativas por contexto:**
-- Para H3 (franquias): `Seus olhos em cada loja. O tempo todo.`
+- Para H3 (franquias): `Suas câmeras já gravam performance operacional. A GoDados lê.`
 - Para H5 (CDs): `O que acontece no seu CD enquanto você não está lá.`
-- Para ads: `Suas câmeras já gravam. A GoDados lê.`
+- Para ads: `Vídeo → Evento → Indicador → Decisão.`
 
 ---
 
-*Brand Identity GoDados.cam | squads/brand | 2026-06-10*
+*Brand Identity GoDados.cam | squads/brand | 2026-06-10*  
+*Revisado em 2026-06-11 — alinhamento performance-first (Fase 2 do pipeline de narrativa)*
