@@ -20,7 +20,7 @@ Brand book interativo — referência de identidade visual para designers, agên
 
 ## Site publicado
 
-`https://s-bet.github.io/cam-brand/`
+`https://brand.godados.cam/`
 
 ## Stack
 
@@ -65,7 +65,7 @@ Repositório: `https://github.com/s-bet/cam-brand.git`
 1. `index.html` na raiz do repo
 2. `.nojekyll` presente na raiz
 3. Settings → Pages → Deploy from branch → `main` / root
-4. Domínio custom: adicionar `CNAME` com `godados.cam` + DNS
+4. Domínio custom: `CNAME` → `brand.godados.cam` ✅ (já configurado)
 
 ## Build de produção (opcional)
 

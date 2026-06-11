@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://godados.cam/sitemap.xml
+Sitemap: https://brand.godados.cam/sitemap.xml
