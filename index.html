@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>GoDados.cam — Inteligência Operacional do Mundo Físico</title>
+  <meta name="description" content="A GoDados.cam transforma as câmeras de segurança que você já tem em sensores de inteligência operacional. KPIs de conformidade em tempo real, sem hardware novo.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f1f35">
+  <link rel="canonical" href="https://godados.cam/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://godados.cam/">
+  <meta property="og:title" content="GoDados.cam — Inteligência Operacional do Mundo Físico">
+  <meta property="og:description" content="Suas câmeras já gravam. A GoDados lê. KPIs de conformidade operacional em tempo real, sem hardware novo.">
+  <meta property="og:image" content="https://godados.cam/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="GoDados.cam">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GoDados.cam — Inteligência Operacional do Mundo Físico">
+  <meta name="twitter:description" content="Suas câmeras já gravam. A GoDados lê.">
+  <meta name="twitter:image" content="https://godados.cam/assets/images/og-image.png">
+
+  <!-- Favicon (inline SVG, zero request) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='16' fill='none' stroke='%2306b6d4' stroke-width='2'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%2306b6d4'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Geist + Inter, display=swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS via CDN (build/prototype delivery — production migrates to Tailwind CLI per architecture.md §8) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   { DEFAULT: '#0f1f35', deep: '#0f1f35', mid: '#1a3358' },
+            cyan:   { DEFAULT: '#06b6d4', elec: '#06b6d4', light: '#22d3ee' },
+            action: { DEFAULT: '#3b82f6', blue: '#3b82f6' },
+            status: { ok: '#10b981', warn: '#f59e0b', alert: '#ef4444' },
+            ink:    { 900: '#0f172a', 600: '#475569' },
+            surface:{ 50: '#f8fafc', 100: '#f1f5f9' },
+          },
+          fontFamily: {
+            sans: ['Geist', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+          },
+          letterSpacing: { tightest: '-0.04em', tighter2: '-0.02em' },
+          lineHeight: { body: '1.7' },
+          maxWidth: { content: '1200px' },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom keyframes + overrides the CDN does not cover -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Schema.org JSON-LD — B2B authority -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GoDados.cam",
+    "url": "https://godados.cam",
+    "logo": "https://godados.cam/assets/images/favicon.svg",
+    "description": "Camada de software que lê as câmeras de segurança existentes para entregar KPIs de conformidade operacional em tempo real.",
+    "sameAs": ["https://www.linkedin.com/company/godados"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "contato@godados.cam",
+      "availableLanguage": ["Portuguese"]
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-navy-deep font-sans text-white antialiased">
+
+  <!-- Skip link -->
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-elec focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-deep">Pular para o conteúdo</a>
+
+  <!-- ============================================================== -->
+  <!-- [0] NAV — sticky, dark, blur                                    -->
+  <!-- ============================================================== -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-navy-deep/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-8" aria-label="Navegação principal">
+      <!-- Logo (dark variant) -->
+      <a href="#topo" class="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep rounded-md" aria-label="GoDados.cam — início">
+        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <title>GoDados.cam</title>
+          <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+          <circle cx="20" cy="20" r="8" fill="#06b6d4" opacity="0.18"/>
+          <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+          <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="8.7" y1="8.7" x2="12.9" y2="12.9" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="27.1" y1="27.1" x2="31.3" y2="31.3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="31.3" y1="8.7" x2="27.1" y2="12.9" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12.9" y1="27.1" x2="8.7" y2="31.3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="text-lg font-bold tracking-tight">
+          <span class="text-white">GoDados</span><span class="text-cyan-elec">.cam</span>
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden items-center gap-8 md:flex">
+        <li><a href="#problema" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Problema</a></li>
+        <li><a href="#como-funciona" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Como Funciona</a></li>
+        <li><a href="#casos" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Casos de Uso</a></li>
+        <li><a href="#resultados" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Resultados</a></li>
+        <li><a href="#contato" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Contato</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <a href="#contato" data-lead="whatsapp" id="navCta" class="hidden rounded-lg bg-cyan-elec px-4 py-2 text-sm font-semibold text-navy-deep transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-elec/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:inline-block">Falar com o time</a>
+
+      <!-- Mobile hamburger -->
+      <button id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-200 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div id="mobileDrawer" class="fixed inset-0 z-50 hidden flex-col bg-navy-deep px-6 py-6" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+      <div class="flex items-center justify-between">
+        <span class="text-lg font-bold"><span class="text-white">GoDados</span><span class="text-cyan-elec">.cam</span></span>
+        <button id="menuClose" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-label="Fechar menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+      <ul class="mt-12 flex flex-col gap-7">
+        <li><a href="#problema" class="drawer-link text-2xl font-semibold text-slate-200">Problema</a></li>
+        <li><a href="#como-funciona" class="drawer-link text-2xl font-semibold text-slate-200">Como Funciona</a></li>
+        <li><a href="#casos" class="drawer-link text-2xl font-semibold text-slate-200">Casos de Uso</a></li>
+        <li><a href="#resultados" class="drawer-link text-2xl font-semibold text-slate-200">Resultados</a></li>
+        <li><a href="#contato" class="drawer-link text-2xl font-semibold text-slate-200">Contato</a></li>
+      </ul>
+      <a href="#contato" data-lead="whatsapp" class="drawer-link mt-auto rounded-lg bg-cyan-elec px-5 py-3 text-center text-base font-semibold text-navy-deep">Falar com o time</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <span id="topo"></span>
+
+    <!-- ============================================================ -->
+    <!-- [1] HERO                                                      -->
+    <!-- ============================================================ -->
+    <section class="relative overflow-hidden border-b border-white/5 bg-navy-deep" aria-labelledby="hero-h1">
+      <!-- subtle radial glow -->
+      <div class="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-elec/10 blur-[120px]" aria-hidden="true"></div>
+
+      <div class="relative mx-auto grid max-w-content items-center gap-12 px-6 py-20 md:grid-cols-2 md:px-8 md:py-28 lg:min-h-[90vh] lg:py-32">
+        <!-- Text column -->
+        <div class="reveal">
+          <p class="mb-5 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec">Inteligência Operacional do Mundo Físico</p>
+          <h1 id="hero-h1" class="text-4xl font-extrabold leading-[1.05] tracking-tightest md:text-6xl lg:text-7xl">
+            Suas câmeras já gravam.<br>
+            <span class="bg-gradient-to-r from-cyan-light to-action-blue bg-clip-text text-transparent">A GoDados lê.</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-body text-slate-300 md:text-xl">
+            Transformamos as câmeras de segurança que você já tem em sensores de inteligência operacional — KPIs de conformidade em tempo real, sem instalar uma única câmera nova.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#como-funciona" class="inline-flex items-center justify-center gap-2 rounded-lg bg-action-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-action-blue/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep">
+              Ver como funciona <span aria-hidden="true">→</span>
+            </a>
+            <a href="#contato" data-lead="whatsapp" class="inline-flex items-center justify-center rounded-lg border border-cyan-elec/50 px-6 py-3.5 text-base font-semibold text-cyan-light transition-all hover:bg-cyan-elec/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">
+              Falar com o time
+            </a>
+          </div>
+
+          <!-- Trust strip -->
+          <ul class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-status-ok" aria-hidden="true"></span>Zero hardware novo</li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan-elec" aria-hidden="true"></span>Leitura contínua 24/7</li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-action-blue" aria-hidden="true"></span>KPI em tempo real</li>
+          </ul>
+        </div>
+
+        <!-- Camera grid mock (decorative) -->
+        <div class="reveal" aria-hidden="true">
+          <div class="rounded-2xl border border-white/10 bg-navy-mid/40 p-4 shadow-2xl shadow-black/40">
+            <div class="mb-3 flex items-center justify-between px-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Painel GoDados</span>
+              <span class="flex items-center gap-1.5 text-xs text-status-ok"><span class="h-2 w-2 animate-pulse rounded-full bg-status-ok"></span>AO VIVO</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <!-- feed 1 -->
+              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 01 · 08:02</span>
+                <span class="status-pill-ok absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✓</span> Conforme</span>
+              </div>
+              <!-- feed 2 -->
+              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 02 · 08:02</span>
+                <span class="status-pill-warn absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">!</span> Atenção</span>
+              </div>
+              <!-- feed 3 -->
+              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 03 · 08:02</span>
+                <span class="status-pill-alert absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✗</span> Fora do padrão</span>
+              </div>
+              <!-- feed 4 -->
+              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 04 · 08:02</span>
+                <span class="status-pill-ok absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✓</span> Conforme</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [2] PROBLEMA                                                  -->
+    <!-- ============================================================ -->
+    <section id="problema" class="bg-navy-mid py-20 md:py-28" aria-labelledby="problema-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec reveal">O Problema</p>
+        <h2 id="problema-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl reveal">
+          Você dirige a operação. Mas consegue responder isso agora, sem ligar para ninguém?
+        </h2>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+          <article class="reveal rounded-2xl border border-white/10 bg-navy-deep/60 p-8 transition-colors hover:border-cyan-elec/30">
+            <span class="block text-5xl font-extrabold text-cyan-elec" aria-hidden="true">?</span>
+            <p class="mt-4 text-lg font-medium text-slate-100">A loja da zona sul abriu no horário hoje?</p>
+          </article>
+          <article class="reveal rounded-2xl border border-white/10 bg-navy-deep/60 p-8 transition-colors hover:border-cyan-elec/30">
+            <span class="block text-5xl font-extrabold text-cyan-elec" aria-hidden="true">?</span>
+            <p class="mt-4 text-lg font-medium text-slate-100">O EPI está sendo usado na linha de produção agora?</p>
+          </article>
+          <article class="reveal rounded-2xl border border-white/10 bg-navy-deep/60 p-8 transition-colors hover:border-cyan-elec/30">
+            <span class="block text-5xl font-extrabold text-cyan-elec" aria-hidden="true">?</span>
+            <p class="mt-4 text-lg font-medium text-slate-100">A doca foi liberada dentro do SLA neste turno?</p>
+          </article>
+        </div>
+
+        <p class="mt-12 max-w-2xl text-lg leading-body text-slate-300 reveal">
+          Hoje essa resposta vem de checklist autodeclarado, visita presencial ou achismo. <span class="font-semibold text-white">Tarde demais — e sem prova.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [3] COMO FUNCIONA                                             -->
+    <!-- ============================================================ -->
+    <section id="como-funciona" class="bg-white py-20 text-ink-900 md:py-28" aria-labelledby="como-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-action-blue reveal">Como Funciona</p>
+        <h2 id="como-h2" class="max-w-2xl text-3xl font-bold tracking-tighter2 text-ink-900 md:text-5xl reveal">
+          Três passos. Nenhuma câmera nova.
+        </h2>
+
+        <div class="relative mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+          <!-- connector line (desktop) -->
+          <div class="step-connector pointer-events-none absolute left-0 right-0 top-7 hidden h-0.5 bg-gradient-to-r from-cyan-elec/40 via-cyan-elec to-action-blue md:block" aria-hidden="true"></div>
+
+          <!-- step 1 -->
+          <div class="reveal relative">
+            <div class="mb-6 flex items-center gap-4">
+              <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-elec/15 text-xl font-extrabold text-cyan-elec ring-4 ring-white">①</span>
+            </div>
+            <h3 class="text-xl font-semibold text-ink-900">Conecta</h3>
+            <p class="mt-3 leading-body text-ink-600">A GoDados se integra ao seu sistema de CFTV atual. Sem trocar equipamento, sem obra, sem novo cabeamento.</p>
+          </div>
+
+          <!-- step 2 -->
+          <div class="reveal relative">
+            <div class="mb-6 flex items-center gap-4">
+              <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-elec/15 text-xl font-extrabold text-cyan-elec ring-4 ring-white">②</span>
+            </div>
+            <h3 class="text-xl font-semibold text-ink-900">Lê</h3>
+            <p class="mt-3 leading-body text-ink-600">O software interpreta o que acontece em cada câmera continuamente — presença, fluxo, conformidade — e classifica em tempo real.</p>
+          </div>
+
+          <!-- step 3 -->
+          <div class="reveal relative">
+            <div class="mb-6 flex items-center gap-4">
+              <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-action-blue/15 text-xl font-extrabold text-action-blue ring-4 ring-white">③</span>
+            </div>
+            <h3 class="text-xl font-semibold text-ink-900">Entrega</h3>
+            <p class="mt-3 leading-body text-ink-600">Você recebe KPIs operacionais num painel: o que está dentro do padrão, o que precisa de atenção e o que está fora — com prova em vídeo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [4] CASOS DE USO — tabs                                       -->
+    <!-- ============================================================ -->
+    <section id="casos" class="bg-surface-50 py-20 text-ink-900 md:py-28" aria-labelledby="casos-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-action-blue reveal">Casos de Uso</p>
+        <h2 id="casos-h2" class="max-w-2xl text-3xl font-bold tracking-tighter2 text-ink-900 md:text-5xl reveal">
+          Onde a GoDados já faz diferença
+        </h2>
+
+        <!-- Tabs -->
+        <div class="mt-10 reveal" role="tablist" aria-label="Segmentos">
+          <div class="flex flex-wrap gap-2 border-b border-ink-600/15">
+            <button role="tab" id="tab-franquias" aria-selected="true" aria-controls="panel-franquias" class="usecase-tab -mb-px border-b-2 border-cyan-elec px-4 py-3 text-sm font-semibold text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">Franquias &amp; Varejo</button>
+            <button role="tab" id="tab-cds" aria-selected="false" tabindex="-1" aria-controls="panel-cds" class="usecase-tab -mb-px border-b-2 border-transparent px-4 py-3 text-sm font-semibold text-ink-600 hover:text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">CDs &amp; Logística</button>
+            <button role="tab" id="tab-industria" aria-selected="false" tabindex="-1" aria-controls="panel-industria" class="usecase-tab -mb-px border-b-2 border-transparent px-4 py-3 text-sm font-semibold text-ink-600 hover:text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">Indústria</button>
+          </div>
+        </div>
+
+        <!-- Panel: Franquias -->
+        <div role="tabpanel" id="panel-franquias" aria-labelledby="tab-franquias" tabindex="0" class="usecase-panel mt-10">
+          <h3 class="text-2xl font-bold text-ink-900">Seus olhos em cada loja. O tempo todo.</h3>
+          <ul class="mt-6 max-w-2xl divide-y divide-ink-600/10 rounded-xl border border-ink-600/10 bg-white">
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Abertura e fechamento no horário</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Tempo de fila no caixa</span><span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Padrão de vitrine e reposição</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Presença de equipe por turno</span><span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span></li>
+          </ul>
+        </div>
+
+        <!-- Panel: CDs -->
+        <div role="tabpanel" id="panel-cds" aria-labelledby="tab-cds" tabindex="0" class="usecase-panel mt-10 hidden">
+          <h3 class="text-2xl font-bold text-ink-900">O que acontece no seu CD enquanto você não está lá.</h3>
+          <ul class="mt-6 max-w-2xl divide-y divide-ink-600/10 rounded-xl border border-ink-600/10 bg-white">
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Liberação de doca dentro do SLA</span><span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Uso de EPI na operação</span><span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Ocupação de área de picking</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Movimentação fora de horário</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
+          </ul>
+        </div>
+
+        <!-- Panel: Indústria -->
+        <div role="tabpanel" id="panel-industria" aria-labelledby="tab-industria" tabindex="0" class="usecase-panel mt-10 hidden">
+          <h3 class="text-2xl font-bold text-ink-900">Conformidade de chão de fábrica, medida — não declarada.</h3>
+          <ul class="mt-6 max-w-2xl divide-y divide-ink-600/10 rounded-xl border border-ink-600/10 bg-white">
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Uso de EPI na linha</span><span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Áreas restritas sem acesso indevido</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Postos ocupados por turno</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
+            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Paradas não programadas detectadas</span><span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [5] PROVA OPERACIONAL                                         -->
+    <!-- ============================================================ -->
+    <section id="resultados" class="bg-navy-deep py-20 md:py-28" aria-labelledby="resultados-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec reveal">Resultados</p>
+        <h2 id="resultados-h2" class="max-w-2xl text-3xl font-bold tracking-tighter2 md:text-5xl reveal">
+          O que muda quando a operação vira dado.
+        </h2>
+
+        <!-- KPI cards -->
+        <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
+            <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec md:text-6xl">24/7</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">leitura contínua de cada câmera</p>
+          </div>
+          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
+            <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec md:text-6xl">100%</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">das suas câmeras atuais aproveitadas</p>
+          </div>
+          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
+            <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec md:text-6xl">0</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">câmeras novas instaladas</p>
+          </div>
+          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
+            <p class="text-4xl font-extrabold tracking-tightest text-cyan-elec md:text-5xl">Tempo real</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">do evento ao alerta</p>
+          </div>
+        </div>
+
+        <!-- Before / After -->
+        <div class="mt-14 grid gap-4 md:grid-cols-2 md:gap-6">
+          <!-- Antes -->
+          <div class="reveal rounded-2xl border border-status-alert/25 bg-status-alert/5 p-7">
+            <p class="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-status-alert">Antes — sem GoDados</p>
+            <ul class="space-y-4">
+              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Visita presencial para saber o que aconteceu</span></li>
+              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Checklist autodeclarado pela própria equipe</span></li>
+              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Problema descoberto dias depois</span></li>
+              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Decisão baseada em "achismo"</span></li>
+            </ul>
+          </div>
+          <!-- Depois -->
+          <div class="reveal rounded-2xl border border-status-ok/30 bg-status-ok/5 p-7">
+            <p class="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-status-ok">Depois — com GoDados</p>
+            <ul class="space-y-4">
+              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>KPI no painel, sem sair da cadeira</span></li>
+              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>Conformidade medida, com prova em vídeo</span></li>
+              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>Alerta no momento em que acontece</span></li>
+              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>Decisão sobre dado real e auditável</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="mt-8 max-w-2xl text-sm text-slate-500 reveal">Números acima representam a capacidade do produto, não métricas de cliente. Resultados de piloto reais substituirão estes indicadores quando disponíveis.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [6] FAQ / OBJEÇÕES                                            -->
+    <!-- ============================================================ -->
+    <section class="bg-white py-20 text-ink-900 md:py-28" aria-labelledby="faq-h2">
+      <div class="mx-auto max-w-3xl px-6 md:px-8">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-action-blue reveal">Objeções</p>
+        <h2 id="faq-h2" class="text-3xl font-bold tracking-tighter2 text-ink-900 md:text-5xl reveal">Antes de falar com a gente</h2>
+
+        <div class="mt-10 divide-y divide-ink-600/10 border-y border-ink-600/10" id="accordion">
+          <!-- item 1 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-1">
+                <span class="text-lg font-semibold text-ink-900">Preciso trocar minhas câmeras?</span>
+                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-1" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Não. A GoDados é uma camada de software que se conecta às câmeras que você já tem. Se elas gravam hoje, a gente lê.</p></div></div>
+          </div>
+          <!-- item 2 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-2">
+                <span class="text-lg font-semibold text-ink-900">E a privacidade e a LGPD?</span>
+                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-2" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">A GoDados lê eventos operacionais — presença, fluxo, conformidade — não cria perfis de pessoas. O processamento segue as bases legais da LGPD para legítimo interesse operacional, e você controla o que é monitorado.</p></div></div>
+          </div>
+          <!-- item 3 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-3">
+                <span class="text-lg font-semibold text-ink-900">Funciona com o meu sistema de CFTV?</span>
+                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-3" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Trabalhamos com os principais sistemas e protocolos de mercado (RTSP/ONVIF e DVRs/NVRs comuns). Na conversa inicial validamos a compatibilidade do seu parque em poucos minutos.</p></div></div>
+          </div>
+          <!-- item 4 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-4">
+                <span class="text-lg font-semibold text-ink-900">Quanto tempo até estar rodando?</span>
+                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-4" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Por ser software sobre a infraestrutura existente, não há obra. A ativação é em dias, não em meses.</p></div></div>
+          </div>
+          <!-- item 5 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-5">
+                <span class="text-lg font-semibold text-ink-900">Onde os dados ficam?</span>
+                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq-5" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Os KPIs e eventos ficam no seu painel. Definimos junto com você a política de retenção e o nível de acesso por usuário.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [7] CTA FINAL                                                 -->
+    <!-- ============================================================ -->
+    <section id="contato" class="bg-gradient-to-br from-navy-deep via-navy-mid to-cyan-elec py-20 md:py-28" aria-labelledby="cta-h2">
+      <div class="mx-auto max-w-3xl px-6 text-center md:px-8">
+        <h2 id="cta-h2" class="text-3xl font-extrabold tracking-tighter2 md:text-5xl reveal">Pare de descobrir os problemas tarde demais.</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg text-slate-200 md:text-xl reveal">Suas câmeras já estão lá. Vamos fazer elas falarem.</p>
+
+        <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row reveal">
+          <a id="ctaWhatsapp" data-lead="whatsapp" href="#" class="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-base font-semibold text-navy-deep transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep">
+            Falar no WhatsApp <span aria-hidden="true">→</span>
+          </a>
+          <a id="ctaEmail" data-lead="email" href="#" class="inline-flex items-center justify-center rounded-lg border border-white/50 px-7 py-3.5 text-base font-semibold text-white transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+            Enviar e-mail
+          </a>
+        </div>
+
+        <p class="mt-7 text-sm text-slate-300 reveal">Resposta em horário comercial · Sem compromisso</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- [8] FOOTER                                                      -->
+  <!-- ============================================================== -->
+  <footer class="bg-navy-deep py-14" aria-label="Rodapé">
+    <div class="mx-auto max-w-content px-6 md:px-8">
+      <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <title>GoDados.cam</title>
+              <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+              <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+              <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="text-lg font-bold"><span class="text-white">GoDados</span><span class="text-cyan-elec">.cam</span></span>
+          </div>
+          <p class="mt-4 max-w-xs text-sm text-slate-400">Inteligência Operacional do Mundo Físico</p>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Produto</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="#como-funciona" class="text-slate-300 transition-colors hover:text-cyan-elec">Como funciona</a></li>
+            <li><a href="#casos" class="text-slate-300 transition-colors hover:text-cyan-elec">Casos de uso</a></li>
+            <li><a href="#resultados" class="text-slate-300 transition-colors hover:text-cyan-elec">Resultados</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Empresa</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="#problema" class="text-slate-300 transition-colors hover:text-cyan-elec">Problema</a></li>
+            <li><a href="#contato" class="text-slate-300 transition-colors hover:text-cyan-elec">Sobre</a></li>
+            <li><a href="#contato" class="text-slate-300 transition-colors hover:text-cyan-elec">LGPD</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Contato</p>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a id="footerWhatsapp" data-lead="whatsapp" href="#" class="text-slate-300 transition-colors hover:text-cyan-elec">WhatsApp</a></li>
+            <li><a id="footerEmail" data-lead="email" href="#" class="text-slate-300 transition-colors hover:text-cyan-elec">contato@godados.cam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-white/10 pt-6 text-sm text-slate-500">
+        © 2026 GoDados.cam · Suas câmeras já gravam. A GoDados lê.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main.js" defer></script>
+</body>
+</html>
