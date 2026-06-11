@@ -4,39 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary SEO -->
-  <title>GoDados.cam — Inteligência Operacional do Mundo Físico</title>
-  <meta name="description" content="A GoDados.cam transforma as câmeras de segurança que você já tem em sensores de inteligência operacional. KPIs de conformidade em tempo real, sem hardware novo.">
-  <meta name="robots" content="index, follow">
+  <title>GoDados.cam — Brand Book · Guia de Identidade Visual</title>
+  <meta name="description" content="Brand Book oficial da GoDados.cam — guia de identidade visual: logo, cores, tipografia, voz da marca, componentes e aplicações. v1.0 · 2026.">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0f1f35">
-  <link rel="canonical" href="https://godados.cam/">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://godados.cam/">
-  <meta property="og:title" content="GoDados.cam — Inteligência Operacional do Mundo Físico">
-  <meta property="og:description" content="Suas câmeras já gravam. A GoDados lê. KPIs de conformidade operacional em tempo real, sem hardware novo.">
-  <meta property="og:image" content="https://godados.cam/assets/images/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="GoDados.cam">
-
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GoDados.cam — Inteligência Operacional do Mundo Físico">
-  <meta name="twitter:description" content="Suas câmeras já gravam. A GoDados lê.">
-  <meta name="twitter:image" content="https://godados.cam/assets/images/og-image.png">
 
   <!-- Favicon (inline SVG, zero request) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='16' fill='none' stroke='%2306b6d4' stroke-width='2'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%2306b6d4'/%3E%3C/svg%3E">
 
-  <!-- Google Fonts: Geist + Inter, display=swap -->
+  <!-- Google Fonts: Geist + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- TailwindCSS via CDN (build/prototype delivery — production migrates to Tailwind CLI per architecture.md §8) -->
+  <!-- TailwindCSS via CDN (brand book — prototype delivery) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -52,6 +33,7 @@
           },
           fontFamily: {
             sans: ['Geist', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
           },
           letterSpacing: { tightest: '-0.04em', tighter2: '-0.02em' },
           lineHeight: { body: '1.7' },
@@ -61,503 +43,810 @@
     }
   </script>
 
-  <!-- Custom keyframes + overrides the CDN does not cover -->
-  <link rel="stylesheet" href="./styles.css">
+  <style>
+    /* --- Brand book custom rules the CDN does not cover ------------------- */
 
-  <!-- Schema.org JSON-LD — B2B authority -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "GoDados.cam",
-    "url": "https://godados.cam",
-    "logo": "https://godados.cam/assets/images/favicon.svg",
-    "description": "Camada de software que lê as câmeras de segurança existentes para entregar KPIs de conformidade operacional em tempo real.",
-    "sameAs": ["https://www.linkedin.com/company/godados"],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "email": "contato@godados.ai",
-      "availableLanguage": ["Portuguese"]
+    /* Logo "don't" demonstrations */
+    .logo-skew   { transform: skewX(-12deg) scaleY(0.8); }
+    .logo-shadow { filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.45)); }
+
+    /* Status pills (dark backgrounds) */
+    .status-pill-ok    { background: rgba(16, 185, 129, 0.18); color: #34d399; }
+    .status-pill-warn  { background: rgba(245, 158, 11, 0.18); color: #fbbf24; }
+    .status-pill-alert { background: rgba(239, 68, 68, 0.18);  color: #f87171; }
+
+    /* Status pills (light backgrounds) */
+    .pill-ok, .pill-warn, .pill-alert {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      border-radius: 9999px; padding: 0.25rem 0.75rem;
+      font-size: 0.75rem; font-weight: 600; white-space: nowrap;
     }
-  }
-  </script>
+    .pill-ok    { background: rgba(16, 185, 129, 0.12); color: #047857; }
+    .pill-warn  { background: rgba(245, 158, 11, 0.15); color: #b45309; }
+    .pill-alert { background: rgba(239, 68, 68, 0.12);  color: #b91c1c; }
+
+    /* Camera feed mock (mini-dashboard component) */
+    .cam-feed {
+      background-image: linear-gradient(135deg, rgba(26, 51, 88, 0.55) 0%, rgba(15, 31, 53, 0.9) 100%);
+    }
+    .cam-corner { position: absolute; width: 12px; height: 12px; border: 2px solid rgba(6, 182, 212, 0.5); }
+    .cam-tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+    .cam-tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+    .cam-bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+    .cam-br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+    .cam-feed::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(6, 182, 212, 0.08) 50%, transparent 100%);
+      animation: cam-scan 3.5s linear infinite;
+    }
+    @keyframes cam-scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+
+    /* Copy-feedback flash on swatches */
+    .copied { position: relative; }
+    .copied::after {
+      content: "Copiado!"; position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(15, 31, 53, 0.92); color: #22d3ee;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+      border-radius: inherit; pointer-events: none;
+      animation: fade-flash 1s ease forwards;
+    }
+    @keyframes fade-flash { 0%,70% { opacity: 1; } 100% { opacity: 0; } }
+
+    /* Active anchor underline in sticky nav */
+    .anchor-link { position: relative; }
+    .anchor-link::after {
+      content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+      background-color: #06b6d4; transition: width 0.2s ease;
+    }
+    .anchor-link:hover::after, .anchor-link:focus-visible::after { width: 100%; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-navy-deep font-sans text-white antialiased">
+<body class="bg-white font-sans text-ink-900 antialiased">
 
   <!-- Skip link -->
-  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-elec focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-deep">Pular para o conteúdo</a>
+  <a href="#essencia" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-cyan-elec focus:px-4 focus:py-2 focus:font-semibold focus:text-navy-deep">Pular para o conteúdo</a>
 
   <!-- ============================================================== -->
-  <!-- [0] NAV — sticky, dark, blur                                    -->
+  <!-- NAV — sticky top                                                -->
   <!-- ============================================================== -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-navy-deep/80 backdrop-blur-md">
-    <nav class="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:px-8" aria-label="Navegação principal">
-      <!-- Logo (dark variant) -->
-      <a href="#topo" class="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep rounded-md" aria-label="GoDados.cam — início">
-        <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <title>GoDados.cam</title>
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-navy-deep/90 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-content items-center justify-between gap-4 px-6 py-3.5 md:px-8" aria-label="Navegação do brand book">
+      <a href="#capa" class="flex items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-label="GoDados.cam — topo">
+        <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
           <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
-          <circle cx="20" cy="20" r="8" fill="#06b6d4" opacity="0.18"/>
           <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
           <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
           <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
           <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
           <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="8.7" y1="8.7" x2="12.9" y2="12.9" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          <line x1="27.1" y1="27.1" x2="31.3" y2="31.3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          <line x1="31.3" y1="8.7" x2="27.1" y2="12.9" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          <line x1="12.9" y1="27.1" x2="8.7" y2="31.3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span class="text-lg font-bold tracking-tight">
-          <span class="text-white">GoDados</span><span class="text-cyan-elec">.cam</span>
-        </span>
+        <span class="text-base font-bold tracking-tight text-white">GoDados<span class="text-cyan-elec">.cam</span> <span class="ml-1 hidden text-xs font-medium uppercase tracking-[0.14em] text-slate-400 sm:inline">Brand Book</span></span>
       </a>
 
-      <!-- Desktop links -->
-      <ul class="hidden items-center gap-8 md:flex">
-        <li><a href="#problema" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Problema</a></li>
-        <li><a href="#como-funciona" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Como Funciona</a></li>
-        <li><a href="#casos" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Casos de Uso</a></li>
-        <li><a href="#resultados" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Resultados</a></li>
-        <li><a href="#contato" class="nav-link text-sm font-medium text-slate-300 transition-colors hover:text-white">Contato</a></li>
+      <ul class="hidden flex-wrap items-center gap-x-5 gap-y-1 text-sm font-medium text-slate-300 lg:flex">
+        <li><a href="#essencia" class="anchor-link transition-colors hover:text-white">Essência</a></li>
+        <li><a href="#logo" class="anchor-link transition-colors hover:text-white">Logo</a></li>
+        <li><a href="#cores" class="anchor-link transition-colors hover:text-white">Cores</a></li>
+        <li><a href="#tipografia" class="anchor-link transition-colors hover:text-white">Tipografia</a></li>
+        <li><a href="#voz" class="anchor-link transition-colors hover:text-white">Voz</a></li>
+        <li><a href="#componentes" class="anchor-link transition-colors hover:text-white">Componentes</a></li>
+        <li><a href="#aplicacoes" class="anchor-link transition-colors hover:text-white">Aplicações</a></li>
       </ul>
 
-      <!-- Desktop CTA -->
-      <a href="#contato" data-lead="whatsapp" id="navCta" class="hidden rounded-lg bg-cyan-elec px-4 py-2 text-sm font-semibold text-navy-deep transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-elec/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:inline-block">Falar com o time</a>
-
-      <!-- Mobile hamburger -->
-      <button id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-200 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
+      <span class="rounded-full border border-cyan-elec/40 px-3 py-1 text-xs font-semibold text-cyan-light">v1.0</span>
     </nav>
-
-    <!-- Mobile drawer -->
-    <div id="mobileDrawer" class="fixed inset-0 z-50 hidden flex-col bg-navy-deep px-6 py-6" role="dialog" aria-modal="true" aria-label="Menu de navegação">
-      <div class="flex items-center justify-between">
-        <span class="text-lg font-bold"><span class="text-white">GoDados</span><span class="text-cyan-elec">.cam</span></span>
-        <button id="menuClose" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-label="Fechar menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-        </button>
-      </div>
-      <ul class="mt-12 flex flex-col gap-7">
-        <li><a href="#problema" class="drawer-link text-2xl font-semibold text-slate-200">Problema</a></li>
-        <li><a href="#como-funciona" class="drawer-link text-2xl font-semibold text-slate-200">Como Funciona</a></li>
-        <li><a href="#casos" class="drawer-link text-2xl font-semibold text-slate-200">Casos de Uso</a></li>
-        <li><a href="#resultados" class="drawer-link text-2xl font-semibold text-slate-200">Resultados</a></li>
-        <li><a href="#contato" class="drawer-link text-2xl font-semibold text-slate-200">Contato</a></li>
-      </ul>
-      <a href="#contato" data-lead="whatsapp" class="drawer-link mt-auto rounded-lg bg-cyan-elec px-5 py-3 text-center text-base font-semibold text-navy-deep">Falar com o time</a>
-    </div>
   </header>
 
-  <main id="conteudo">
-    <span id="topo"></span>
-
+  <main>
     <!-- ============================================================ -->
-    <!-- [1] HERO                                                      -->
+    <!-- [1] CAPA                                                      -->
     <!-- ============================================================ -->
-    <section class="relative overflow-hidden border-b border-white/5 bg-navy-deep" aria-labelledby="hero-h1">
-      <!-- subtle radial glow -->
-      <div class="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-elec/10 blur-[120px]" aria-hidden="true"></div>
+    <section id="capa" class="relative overflow-hidden bg-navy-deep" aria-labelledby="capa-title">
+      <span id="topo"></span>
+      <div class="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-cyan-elec/10 blur-[130px]" aria-hidden="true"></div>
 
-      <div class="relative mx-auto grid max-w-content items-center gap-12 px-6 py-20 md:grid-cols-2 md:px-8 md:py-28 lg:min-h-[90vh] lg:py-32">
-        <!-- Text column -->
-        <div class="reveal">
-          <p class="mb-5 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec">Inteligência Operacional do Mundo Físico</p>
-          <h1 id="hero-h1" class="text-4xl font-extrabold leading-[1.05] tracking-tightest md:text-6xl lg:text-7xl">
-            Suas câmeras já gravam.<br>
-            <span class="bg-gradient-to-r from-cyan-light to-action-blue bg-clip-text text-transparent">A GoDados lê.</span>
-          </h1>
-          <p class="mt-6 max-w-xl text-lg leading-body text-slate-300 md:text-xl">
-            Transformamos as câmeras de segurança que você já tem em sensores de inteligência operacional — KPIs de conformidade em tempo real, sem instalar uma única câmera nova.
-          </p>
+      <div class="relative mx-auto flex min-h-[78vh] max-w-content flex-col items-center justify-center px-6 py-24 text-center md:px-8">
+        <!-- Large centered logo -->
+        <svg width="320" height="80" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" class="w-64 md:w-96" aria-label="GoDados.cam">
+          <circle cx="20" cy="20" r="16" fill="none" stroke="#3b82f6" stroke-width="2"/>
+          <circle cx="20" cy="20" r="8" fill="#3b82f6" opacity="0.15"/>
+          <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+          <line x1="20" y1="4" x2="20" y2="10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="20" y1="30" x2="20" y2="36" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4" y1="20" x2="10" y2="20" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="30" y1="20" x2="36" y2="20" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="8.7" y1="8.7" x2="12.9" y2="12.9" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+          <line x1="27.1" y1="27.1" x2="31.3" y2="31.3" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+          <line x1="31.3" y1="8.7" x2="27.1" y2="12.9" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12.9" y1="27.1" x2="8.7" y2="31.3" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+          <text x="46" y="25" font-family="'Geist', 'Inter', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Go</text>
+          <text x="66" y="25" font-family="'Geist', 'Inter', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Dados</text>
+          <text x="122" y="25" font-family="'Geist', 'Inter', sans-serif" font-size="18" font-weight="700" fill="#06b6d4">.cam</text>
+        </svg>
 
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="#como-funciona" class="inline-flex items-center justify-center gap-2 rounded-lg bg-action-blue px-6 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-action-blue/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep">
-              Ver como funciona <span aria-hidden="true">→</span>
-            </a>
-            <a href="#contato" data-lead="whatsapp" class="inline-flex items-center justify-center rounded-lg border border-cyan-elec/50 px-6 py-3.5 text-base font-semibold text-cyan-light transition-all hover:bg-cyan-elec/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">
-              Falar com o time
-            </a>
-          </div>
-
-          <!-- Trust strip -->
-          <ul class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-400">
-            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-status-ok" aria-hidden="true"></span>Zero hardware novo</li>
-            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-cyan-elec" aria-hidden="true"></span>Leitura contínua 24/7</li>
-            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-action-blue" aria-hidden="true"></span>KPI em tempo real</li>
-          </ul>
-        </div>
-
-        <!-- Camera grid mock (decorative) -->
-        <div class="reveal" aria-hidden="true">
-          <div class="rounded-2xl border border-white/10 bg-navy-mid/40 p-4 shadow-2xl shadow-black/40">
-            <div class="mb-3 flex items-center justify-between px-1">
-              <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Painel GoDados</span>
-              <span class="flex items-center gap-1.5 text-xs text-status-ok"><span class="h-2 w-2 animate-pulse rounded-full bg-status-ok"></span>AO VIVO</span>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <!-- feed 1 -->
-              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
-                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
-                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 01 · 08:02</span>
-                <span class="status-pill-ok absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✓</span> Conforme</span>
-              </div>
-              <!-- feed 2 -->
-              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
-                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
-                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 02 · 08:02</span>
-                <span class="status-pill-warn absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">!</span> Atenção</span>
-              </div>
-              <!-- feed 3 -->
-              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
-                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
-                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 03 · 08:02</span>
-                <span class="status-pill-alert absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✗</span> Fora do padrão</span>
-              </div>
-              <!-- feed 4 -->
-              <div class="cam-feed group relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
-                <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
-                <span class="absolute left-1.5 top-1.5 text-[9px] font-mono text-slate-500">CAM 04 · 08:02</span>
-                <span class="status-pill-ok absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✓</span> Conforme</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- [2] PROBLEMA                                                  -->
-    <!-- ============================================================ -->
-    <section id="problema" class="bg-navy-mid py-20 md:py-28" aria-labelledby="problema-h2">
-      <div class="mx-auto max-w-content px-6 md:px-8">
-        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec reveal">O Problema</p>
-        <h2 id="problema-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl reveal">
-          Você dirige a operação. Mas consegue responder isso agora, sem ligar para ninguém?
-        </h2>
-
-        <div class="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
-          <article class="reveal rounded-2xl border border-white/10 bg-navy-deep/60 p-8 transition-colors hover:border-cyan-elec/30">
-            <span class="block text-5xl font-extrabold text-cyan-elec" aria-hidden="true">?</span>
-            <p class="mt-4 text-lg font-medium text-slate-100">A loja da zona sul abriu no horário hoje?</p>
-          </article>
-          <article class="reveal rounded-2xl border border-white/10 bg-navy-deep/60 p-8 transition-colors hover:border-cyan-elec/30">
-            <span class="block text-5xl font-extrabold text-cyan-elec" aria-hidden="true">?</span>
-            <p class="mt-4 text-lg font-medium text-slate-100">O EPI está sendo usado na linha de produção agora?</p>
-          </article>
-          <article class="reveal rounded-2xl border border-white/10 bg-navy-deep/60 p-8 transition-colors hover:border-cyan-elec/30">
-            <span class="block text-5xl font-extrabold text-cyan-elec" aria-hidden="true">?</span>
-            <p class="mt-4 text-lg font-medium text-slate-100">A doca foi liberada dentro do SLA neste turno?</p>
-          </article>
-        </div>
-
-        <p class="mt-12 max-w-2xl text-lg leading-body text-slate-300 reveal">
-          Hoje essa resposta vem de checklist autodeclarado, visita presencial ou achismo. <span class="font-semibold text-white">Tarde demais — e sem prova.</span>
+        <h1 id="capa-title" class="mt-12 text-4xl font-extrabold tracking-tightest text-white md:text-6xl">
+          GoDados.cam <span class="text-cyan-elec">— Brand Book</span>
+        </h1>
+        <p class="mt-5 text-base font-medium uppercase tracking-[0.16em] text-slate-400 md:text-lg">
+          Guia de Identidade Visual · v1.0 · 2026
         </p>
+
+        <a href="#essencia" class="mt-14 inline-flex items-center gap-2 text-sm font-semibold text-cyan-light transition-colors hover:text-white">
+          Começar <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- [3] COMO FUNCIONA                                             -->
+    <!-- [2] BRAND ESSENCE                                             -->
     <!-- ============================================================ -->
-    <section id="como-funciona" class="bg-white py-20 text-ink-900 md:py-28" aria-labelledby="como-h2">
+    <section id="essencia" class="bg-white py-20 md:py-28" aria-labelledby="essencia-h2">
       <div class="mx-auto max-w-content px-6 md:px-8">
-        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-action-blue reveal">Como Funciona</p>
-        <h2 id="como-h2" class="max-w-2xl text-3xl font-bold tracking-tighter2 text-ink-900 md:text-5xl reveal">
-          Três passos. Nenhuma câmera nova.
-        </h2>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-action-blue">01 · Essência</p>
+        <h2 id="essencia-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">A essência da marca</h2>
 
-        <div class="relative mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
-          <!-- connector line (desktop) -->
-          <div class="step-connector pointer-events-none absolute left-0 right-0 top-7 hidden h-0.5 bg-gradient-to-r from-cyan-elec/40 via-cyan-elec to-action-blue md:block" aria-hidden="true"></div>
+        <!-- Onliness statement -->
+        <figure class="mt-12 rounded-2xl border-2 border-cyan-elec bg-surface-50 p-8 md:p-12">
+          <figcaption class="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-cyan-elec">Onliness Statement</figcaption>
+          <blockquote class="text-2xl font-semibold leading-snug tracking-tight text-ink-900 md:text-3xl">
+            A GoDados.cam é a <span class="text-cyan-elec">única</span> plataforma que transforma câmeras de segurança já instaladas em sensores de inteligência operacional — para operações físicas que precisam de dado, não de mais hardware.
+          </blockquote>
+        </figure>
 
-          <!-- step 1 -->
-          <div class="reveal relative">
-            <div class="mb-6 flex items-center gap-4">
-              <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-elec/15 text-xl font-extrabold text-cyan-elec ring-4 ring-white">①</span>
+        <!-- Brand Ladder -->
+        <div class="mt-16">
+          <h3 class="text-xl font-semibold tracking-tight md:text-2xl">Brand Ladder</h3>
+          <p class="mt-2 max-w-2xl text-ink-600">Como subimos do atributo concreto até a identidade que o cliente adota.</p>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-4">
+            <div class="rounded-xl border border-ink-600/10 bg-white p-6 shadow-sm">
+              <span class="text-xs font-bold uppercase tracking-[0.1em] text-slate-400">1 · Atributo</span>
+              <p class="mt-3 text-lg font-medium text-ink-900">"Conecta às câmeras que você já tem"</p>
             </div>
-            <h3 class="text-xl font-semibold text-ink-900">Conecta</h3>
-            <p class="mt-3 leading-body text-ink-600">A GoDados se integra ao seu sistema de CFTV atual. Sem trocar equipamento, sem obra, sem novo cabeamento.</p>
-          </div>
-
-          <!-- step 2 -->
-          <div class="reveal relative">
-            <div class="mb-6 flex items-center gap-4">
-              <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-cyan-elec/15 text-xl font-extrabold text-cyan-elec ring-4 ring-white">②</span>
+            <div class="rounded-xl border border-ink-600/10 bg-surface-50 p-6 shadow-sm">
+              <span class="text-xs font-bold uppercase tracking-[0.1em] text-action-blue">2 · Benefício</span>
+              <p class="mt-3 text-lg font-medium text-ink-900">"Você vê o que está acontecendo agora, em toda a operação"</p>
             </div>
-            <h3 class="text-xl font-semibold text-ink-900">Lê</h3>
-            <p class="mt-3 leading-body text-ink-600">O software interpreta o que acontece em cada câmera continuamente — presença, fluxo, conformidade — e classifica em tempo real.</p>
-          </div>
-
-          <!-- step 3 -->
-          <div class="reveal relative">
-            <div class="mb-6 flex items-center gap-4">
-              <span class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-action-blue/15 text-xl font-extrabold text-action-blue ring-4 ring-white">③</span>
+            <div class="rounded-xl border border-action-blue/20 bg-action-blue/5 p-6 shadow-sm">
+              <span class="text-xs font-bold uppercase tracking-[0.1em] text-action-blue">3 · Valor</span>
+              <p class="mt-3 text-lg font-medium text-ink-900">"Você toma decisões com dado real, não com percepção"</p>
             </div>
-            <h3 class="text-xl font-semibold text-ink-900">Entrega</h3>
-            <p class="mt-3 leading-body text-ink-600">Você recebe KPIs operacionais num painel: o que está dentro do padrão, o que precisa de atenção e o que está fora — com prova em vídeo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- [4] CASOS DE USO — tabs                                       -->
-    <!-- ============================================================ -->
-    <section id="casos" class="bg-surface-50 py-20 text-ink-900 md:py-28" aria-labelledby="casos-h2">
-      <div class="mx-auto max-w-content px-6 md:px-8">
-        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-action-blue reveal">Casos de Uso</p>
-        <h2 id="casos-h2" class="max-w-2xl text-3xl font-bold tracking-tighter2 text-ink-900 md:text-5xl reveal">
-          Onde a GoDados já faz diferença
-        </h2>
-
-        <!-- Tabs -->
-        <div class="mt-10 reveal" role="tablist" aria-label="Segmentos">
-          <div class="flex flex-wrap gap-2 border-b border-ink-600/15">
-            <button role="tab" id="tab-franquias" aria-selected="true" aria-controls="panel-franquias" class="usecase-tab -mb-px border-b-2 border-cyan-elec px-4 py-3 text-sm font-semibold text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">Franquias &amp; Varejo</button>
-            <button role="tab" id="tab-cds" aria-selected="false" tabindex="-1" aria-controls="panel-cds" class="usecase-tab -mb-px border-b-2 border-transparent px-4 py-3 text-sm font-semibold text-ink-600 hover:text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">CDs &amp; Logística</button>
-            <button role="tab" id="tab-industria" aria-selected="false" tabindex="-1" aria-controls="panel-industria" class="usecase-tab -mb-px border-b-2 border-transparent px-4 py-3 text-sm font-semibold text-ink-600 hover:text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec">Indústria</button>
+            <div class="rounded-xl border-2 border-cyan-elec bg-cyan-elec/5 p-6 shadow-sm">
+              <span class="text-xs font-bold uppercase tracking-[0.1em] text-cyan-elec">4 · Identidade</span>
+              <p class="mt-3 text-lg font-semibold text-ink-900">"A operação que você controla de verdade"</p>
+            </div>
           </div>
         </div>
 
-        <!-- Panel: Franquias -->
-        <div role="tabpanel" id="panel-franquias" aria-labelledby="tab-franquias" tabindex="0" class="usecase-panel mt-10">
-          <h3 class="text-2xl font-bold text-ink-900">Seus olhos em cada loja. O tempo todo.</h3>
-          <ul class="mt-6 max-w-2xl divide-y divide-ink-600/10 rounded-xl border border-ink-600/10 bg-white">
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Abertura e fechamento no horário</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Tempo de fila no caixa</span><span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Padrão de vitrine e reposição</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Presença de equipe por turno</span><span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span></li>
-          </ul>
-        </div>
-
-        <!-- Panel: CDs -->
-        <div role="tabpanel" id="panel-cds" aria-labelledby="tab-cds" tabindex="0" class="usecase-panel mt-10 hidden">
-          <h3 class="text-2xl font-bold text-ink-900">O que acontece no seu CD enquanto você não está lá.</h3>
-          <ul class="mt-6 max-w-2xl divide-y divide-ink-600/10 rounded-xl border border-ink-600/10 bg-white">
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Liberação de doca dentro do SLA</span><span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Uso de EPI na operação</span><span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Ocupação de área de picking</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Movimentação fora de horário</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
-          </ul>
-        </div>
-
-        <!-- Panel: Indústria -->
-        <div role="tabpanel" id="panel-industria" aria-labelledby="tab-industria" tabindex="0" class="usecase-panel mt-10 hidden">
-          <h3 class="text-2xl font-bold text-ink-900">Conformidade de chão de fábrica, medida — não declarada.</h3>
-          <ul class="mt-6 max-w-2xl divide-y divide-ink-600/10 rounded-xl border border-ink-600/10 bg-white">
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Uso de EPI na linha</span><span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Áreas restritas sem acesso indevido</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Postos ocupados por turno</span><span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span></li>
-            <li class="flex items-center justify-between gap-4 px-5 py-4"><span class="text-ink-900">Paradas não programadas detectadas</span><span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- [5] PROVA OPERACIONAL                                         -->
-    <!-- ============================================================ -->
-    <section id="resultados" class="bg-navy-deep py-20 md:py-28" aria-labelledby="resultados-h2">
-      <div class="mx-auto max-w-content px-6 md:px-8">
-        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec reveal">Resultados</p>
-        <h2 id="resultados-h2" class="max-w-2xl text-3xl font-bold tracking-tighter2 md:text-5xl reveal">
-          O que muda quando a operação vira dado.
-        </h2>
-
-        <!-- KPI cards -->
-        <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
-            <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec md:text-6xl">24/7</p>
-            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">leitura contínua de cada câmera</p>
+        <!-- Taglines -->
+        <div class="mt-16 grid gap-8 md:grid-cols-2">
+          <div class="rounded-2xl bg-navy-deep p-8 text-white">
+            <p class="text-xs font-bold uppercase tracking-[0.14em] text-cyan-light">Tagline Principal</p>
+            <p class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">Inteligência Operacional do Mundo Físico</p>
           </div>
-          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
-            <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec md:text-6xl">100%</p>
-            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">das suas câmeras atuais aproveitadas</p>
-          </div>
-          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
-            <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec md:text-6xl">0</p>
-            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">câmeras novas instaladas</p>
-          </div>
-          <div class="reveal rounded-2xl border border-white/10 bg-navy-mid/40 p-6 transition-colors hover:border-cyan-elec/40">
-            <p class="text-4xl font-extrabold tracking-tightest text-cyan-elec md:text-5xl">Tempo real</p>
-            <p class="mt-3 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">do evento ao alerta</p>
-          </div>
-        </div>
-
-        <!-- Before / After -->
-        <div class="mt-14 grid gap-4 md:grid-cols-2 md:gap-6">
-          <!-- Antes -->
-          <div class="reveal rounded-2xl border border-status-alert/25 bg-status-alert/5 p-7">
-            <p class="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-status-alert">Antes — sem GoDados</p>
-            <ul class="space-y-4">
-              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Visita presencial para saber o que aconteceu</span></li>
-              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Checklist autodeclarado pela própria equipe</span></li>
-              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Problema descoberto dias depois</span></li>
-              <li class="flex gap-3 text-slate-300"><span class="mt-0.5 font-bold text-status-alert" aria-hidden="true">✗</span><span>Decisão baseada em "achismo"</span></li>
-            </ul>
-          </div>
-          <!-- Depois -->
-          <div class="reveal rounded-2xl border border-status-ok/30 bg-status-ok/5 p-7">
-            <p class="mb-5 text-xs font-bold uppercase tracking-[0.1em] text-status-ok">Depois — com GoDados</p>
-            <ul class="space-y-4">
-              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>KPI no painel, sem sair da cadeira</span></li>
-              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>Conformidade medida, com prova em vídeo</span></li>
-              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>Alerta no momento em que acontece</span></li>
-              <li class="flex gap-3 text-slate-100"><span class="mt-0.5 font-bold text-status-ok" aria-hidden="true">✓</span><span>Decisão sobre dado real e auditável</span></li>
+          <div class="rounded-2xl border border-ink-600/10 bg-surface-50 p-8">
+            <p class="text-xs font-bold uppercase tracking-[0.14em] text-action-blue">Taglines por segmento</p>
+            <ul class="mt-4 space-y-3 text-ink-900">
+              <li class="flex flex-col"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Franquias</span><span class="text-lg font-medium">Seus olhos em cada loja. O tempo todo.</span></li>
+              <li class="flex flex-col"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">CDs &amp; Logística</span><span class="text-lg font-medium">O que acontece no seu CD enquanto você não está lá.</span></li>
+              <li class="flex flex-col"><span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Anúncios</span><span class="text-lg font-medium">Suas câmeras já gravam. A GoDados lê.</span></li>
             </ul>
           </div>
         </div>
 
-        <p class="mt-8 max-w-2xl text-sm text-slate-500 reveal">Números acima representam a capacidade do produto, não métricas de cliente. Resultados de piloto reais substituirão estes indicadores quando disponíveis.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- [6] FAQ / OBJEÇÕES                                            -->
-    <!-- ============================================================ -->
-    <section class="bg-white py-20 text-ink-900 md:py-28" aria-labelledby="faq-h2">
-      <div class="mx-auto max-w-3xl px-6 md:px-8">
-        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-action-blue reveal">Objeções</p>
-        <h2 id="faq-h2" class="text-3xl font-bold tracking-tighter2 text-ink-900 md:text-5xl reveal">Antes de falar com a gente</h2>
-
-        <div class="mt-10 divide-y divide-ink-600/10 border-y border-ink-600/10" id="accordion">
-          <!-- item 1 -->
-          <div class="accordion-item">
-            <h3>
-              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-1">
-                <span class="text-lg font-semibold text-ink-900">Preciso trocar minhas câmeras?</span>
-                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq-1" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Não. A GoDados é uma camada de software que se conecta às câmeras que você já tem. Se elas gravam hoje, a gente lê.</p></div></div>
-          </div>
-          <!-- item 2 -->
-          <div class="accordion-item">
-            <h3>
-              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-2">
-                <span class="text-lg font-semibold text-ink-900">E a privacidade e a LGPD?</span>
-                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq-2" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">A GoDados lê eventos operacionais — presença, fluxo, conformidade — não cria perfis de pessoas. O processamento segue as bases legais da LGPD para legítimo interesse operacional, e você controla o que é monitorado.</p></div></div>
-          </div>
-          <!-- item 3 -->
-          <div class="accordion-item">
-            <h3>
-              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-3">
-                <span class="text-lg font-semibold text-ink-900">Funciona com o meu sistema de CFTV?</span>
-                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq-3" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Trabalhamos com os principais sistemas e protocolos de mercado (RTSP/ONVIF e DVRs/NVRs comuns). Na conversa inicial validamos a compatibilidade do seu parque em poucos minutos.</p></div></div>
-          </div>
-          <!-- item 4 -->
-          <div class="accordion-item">
-            <h3>
-              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-4">
-                <span class="text-lg font-semibold text-ink-900">Quanto tempo até estar rodando?</span>
-                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq-4" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Por ser software sobre a infraestrutura existente, não há obra. A ativação é em dias, não em meses.</p></div></div>
-          </div>
-          <!-- item 5 -->
-          <div class="accordion-item">
-            <h3>
-              <button type="button" class="accordion-trigger flex w-full items-center justify-between gap-4 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-elec" aria-expanded="false" aria-controls="faq-5">
-                <span class="text-lg font-semibold text-ink-900">Onde os dados ficam?</span>
-                <span class="accordion-icon shrink-0 text-2xl font-light text-action-blue" aria-hidden="true">+</span>
-              </button>
-            </h3>
-            <div id="faq-5" class="accordion-content"><div class="overflow-hidden"><p class="pb-5 leading-body text-ink-600">Os KPIs e eventos ficam no seu painel. Definimos junto com você a política de retenção e o nível de acesso por usuário.</p></div></div>
+        <!-- Positioning -->
+        <div class="mt-16">
+          <h3 class="text-xl font-semibold tracking-tight md:text-2xl">Posicionamento</h3>
+          <div class="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink-600/10 bg-ink-600/10 md:grid-cols-4">
+            <div class="bg-white p-6">
+              <p class="text-xs font-bold uppercase tracking-[0.12em] text-cyan-elec">Para</p>
+              <p class="mt-2 text-ink-900">Diretores de Operações de empresas com operações físicas distribuídas</p>
+            </div>
+            <div class="bg-white p-6">
+              <p class="text-xs font-bold uppercase tracking-[0.12em] text-cyan-elec">Que</p>
+              <p class="mt-2 text-ink-900">Não têm visibilidade real em tempo real sem auditor presencial</p>
+            </div>
+            <div class="bg-white p-6">
+              <p class="text-xs font-bold uppercase tracking-[0.12em] text-cyan-elec">Entrega</p>
+              <p class="mt-2 text-ink-900">KPIs de conformidade operacional em tempo real, sem hardware novo</p>
+            </div>
+            <div class="bg-white p-6">
+              <p class="text-xs font-bold uppercase tracking-[0.12em] text-status-alert">Ao contrário de</p>
+              <p class="mt-2 text-ink-900">Supervisão de campo, mystery shoppers e checklists autodeclarados</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================ -->
-    <!-- [7] CTA FINAL                                                 -->
+    <!-- [3] LOGO                                                      -->
     <!-- ============================================================ -->
-    <section id="contato" class="bg-gradient-to-br from-navy-deep via-navy-mid to-cyan-elec py-20 md:py-28" aria-labelledby="cta-h2">
-      <div class="mx-auto max-w-3xl px-6 text-center md:px-8">
-        <h2 id="cta-h2" class="text-3xl font-extrabold tracking-tighter2 md:text-5xl reveal">Pare de descobrir os problemas tarde demais.</h2>
-        <p class="mx-auto mt-5 max-w-xl text-lg text-slate-200 md:text-xl reveal">Suas câmeras já estão lá. Vamos fazer elas falarem.</p>
+    <section id="logo" class="bg-navy-deep py-20 text-white md:py-28" aria-labelledby="logo-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-light">02 · Logo</p>
+        <h2 id="logo-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">O logo e suas variantes</h2>
+        <p class="mt-4 max-w-2xl text-slate-300">A íris/lente representa câmera + dado + inteligência. O wordmark sempre acompanha o ícone, com o <span class="text-cyan-light">.cam</span> em cyan como assinatura.</p>
 
-        <div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row reveal">
-          <a id="ctaWhatsapp" data-lead="whatsapp" href="#" class="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-base font-semibold text-navy-deep transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep">
-            Falar no WhatsApp <span aria-hidden="true">→</span>
-          </a>
-          <a id="ctaEmail" data-lead="email" href="#" class="inline-flex items-center justify-center rounded-lg border border-white/50 px-7 py-3.5 text-base font-semibold text-white transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
-            Enviar e-mail
-          </a>
+        <!-- 3 variants -->
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <!-- Full color -->
+          <figure class="overflow-hidden rounded-2xl border border-white/10">
+            <div class="flex h-44 items-center justify-center bg-[#f8fafc]">
+              <svg width="200" height="50" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GoDados.cam — variante full color">
+                <circle cx="20" cy="20" r="16" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                <circle cx="20" cy="20" r="8" fill="#3b82f6" opacity="0.15"/>
+                <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+                <line x1="20" y1="4" x2="20" y2="10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="20" y1="30" x2="20" y2="36" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="4" y1="20" x2="10" y2="20" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="30" y1="20" x2="36" y2="20" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="8.7" y1="8.7" x2="12.9" y2="12.9" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+                <line x1="27.1" y1="27.1" x2="31.3" y2="31.3" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+                <line x1="31.3" y1="8.7" x2="27.1" y2="12.9" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12.9" y1="27.1" x2="8.7" y2="31.3" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+                <text x="46" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#0f1f35">Go</text>
+                <text x="66" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#0f1f35">Dados</text>
+                <text x="122" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#06b6d4">.cam</text>
+              </svg>
+            </div>
+            <figcaption class="bg-navy-mid/40 px-5 py-3 text-sm"><span class="font-semibold text-white">Full color</span> <span class="text-slate-400">· uso padrão sobre claro</span></figcaption>
+          </figure>
+
+          <!-- Dark -->
+          <figure class="overflow-hidden rounded-2xl border border-white/10">
+            <div class="flex h-44 items-center justify-center bg-[#0f1f35]">
+              <svg width="200" height="50" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GoDados.cam — variante dark">
+                <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+                <circle cx="20" cy="20" r="8" fill="#06b6d4" opacity="0.18"/>
+                <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+                <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="8.7" y1="8.7" x2="12.9" y2="12.9" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                <line x1="27.1" y1="27.1" x2="31.3" y2="31.3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                <line x1="31.3" y1="8.7" x2="27.1" y2="12.9" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12.9" y1="27.1" x2="8.7" y2="31.3" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                <text x="46" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#ffffff">Go</text>
+                <text x="66" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#ffffff">Dados</text>
+                <text x="122" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#06b6d4">.cam</text>
+              </svg>
+            </div>
+            <figcaption class="bg-navy-mid/40 px-5 py-3 text-sm"><span class="font-semibold text-white">Dark</span> <span class="text-slate-400">· sobre navy, wordmark branco</span></figcaption>
+          </figure>
+
+          <!-- Mono -->
+          <figure class="overflow-hidden rounded-2xl border border-white/10">
+            <div class="flex h-44 items-center justify-center bg-[#f1f5f9]">
+              <svg width="200" height="50" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GoDados.cam — variante monocromática">
+                <circle cx="20" cy="20" r="16" fill="none" stroke="#0f1f35" stroke-width="2"/>
+                <circle cx="20" cy="20" r="8" fill="#0f1f35" opacity="0.12"/>
+                <circle cx="20" cy="20" r="4" fill="#0f1f35"/>
+                <line x1="20" y1="4" x2="20" y2="10" stroke="#0f1f35" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="20" y1="30" x2="20" y2="36" stroke="#0f1f35" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="4" y1="20" x2="10" y2="20" stroke="#0f1f35" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="30" y1="20" x2="36" y2="20" stroke="#0f1f35" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="8.7" y1="8.7" x2="12.9" y2="12.9" stroke="#0f1f35" stroke-width="2" stroke-linecap="round"/>
+                <line x1="27.1" y1="27.1" x2="31.3" y2="31.3" stroke="#0f1f35" stroke-width="2" stroke-linecap="round"/>
+                <line x1="31.3" y1="8.7" x2="27.1" y2="12.9" stroke="#0f1f35" stroke-width="2" stroke-linecap="round"/>
+                <line x1="12.9" y1="27.1" x2="8.7" y2="31.3" stroke="#0f1f35" stroke-width="2" stroke-linecap="round"/>
+                <text x="46" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#0f1f35">Go</text>
+                <text x="66" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#0f1f35">Dados</text>
+                <text x="122" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#0f1f35">.cam</text>
+              </svg>
+            </div>
+            <figcaption class="bg-navy-mid/40 px-5 py-3 text-sm"><span class="font-semibold text-white">Mono</span> <span class="text-slate-400">· documentos, fax, gravação</span></figcaption>
+          </figure>
         </div>
 
-        <p class="mt-7 text-sm text-slate-300 reveal">Resposta em horário comercial · Sem compromisso</p>
+        <!-- Rules -->
+        <div class="mt-12 grid gap-4 md:grid-cols-4">
+          <div class="rounded-xl border border-status-ok/30 bg-status-ok/10 p-5">
+            <p class="text-2xl" aria-hidden="true">✅</p>
+            <p class="mt-2 font-semibold text-white">Largura mínima 120px</p>
+            <p class="mt-1 text-sm text-slate-300">Garante a legibilidade do ".cam".</p>
+          </div>
+          <div class="rounded-xl border border-status-alert/30 bg-status-alert/10 p-5">
+            <p class="text-2xl" aria-hidden="true">❌</p>
+            <p class="mt-2 font-semibold text-white">Não distorcer</p>
+            <p class="mt-1 text-sm text-slate-300">Nunca esticar, inclinar ou alterar proporção.</p>
+            <div class="mt-3 flex h-12 items-center justify-center rounded bg-white/5">
+              <span class="logo-skew text-sm font-bold text-slate-500">GoDados<span class="text-cyan-elec">.cam</span></span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-status-alert/30 bg-status-alert/10 p-5">
+            <p class="text-2xl" aria-hidden="true">❌</p>
+            <p class="mt-2 font-semibold text-white">Não aplicar sombra</p>
+            <p class="mt-1 text-sm text-slate-300">Sem drop-shadow, bevel ou glow.</p>
+            <div class="mt-3 flex h-12 items-center justify-center rounded bg-white/5">
+              <span class="logo-shadow text-sm font-bold text-slate-300">GoDados<span class="text-cyan-elec">.cam</span></span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-status-alert/30 bg-status-alert/10 p-5">
+            <p class="text-2xl" aria-hidden="true">❌</p>
+            <p class="mt-2 font-semibold text-white">Não alterar cores</p>
+            <p class="mt-1 text-sm text-slate-300">Use apenas as 3 variantes aprovadas.</p>
+            <div class="mt-3 flex h-12 items-center justify-center rounded bg-white/5">
+              <span class="text-sm font-bold text-status-alert">GoDados<span class="text-status-warn">.cam</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [4] CORES                                                     -->
+    <!-- ============================================================ -->
+    <section id="cores" class="bg-surface-50 py-20 md:py-28" aria-labelledby="cores-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-action-blue">03 · Cores</p>
+        <h2 id="cores-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">Paleta de cores</h2>
+        <p class="mt-4 max-w-2xl text-ink-600">Clique em qualquer swatch para copiar o hex.</p>
+
+        <!-- PRIMARY -->
+        <h3 class="mt-12 text-sm font-bold uppercase tracking-[0.12em] text-slate-500">Primary · Autoridade Industrial</h3>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <button type="button" data-hex="#0f1f35" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#0f1f35"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Navy Profundo</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#0f1f35</span>
+              <span class="mt-1 block text-xs text-slate-400">Headlines, texto, botões dark</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#1a3358" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#1a3358"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Navy Médio</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#1a3358</span>
+              <span class="mt-1 block text-xs text-slate-400">Seções alternadas</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- ACCENT -->
+        <h3 class="mt-12 text-sm font-bold uppercase tracking-[0.12em] text-slate-500">Accent · Inteligência / Tecnologia</h3>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <button type="button" data-hex="#06b6d4" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#06b6d4"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Cyan Elétrico</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#06b6d4</span>
+              <span class="mt-1 block text-xs text-slate-400">Highlights, links, underlines</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#3b82f6" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#3b82f6"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Blue Ação</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#3b82f6</span>
+              <span class="mt-1 block text-xs text-slate-400">Elementos secundários, CTAs</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- STATUS -->
+        <h3 class="mt-12 text-sm font-bold uppercase tracking-[0.12em] text-slate-500">Status Operacional · Núcleo do produto</h3>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <button type="button" data-hex="#10b981" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#10b981"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Verde Conforme</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#10b981</span>
+              <span class="mt-1 block text-xs text-slate-400">Dentro do padrão (✓)</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#f59e0b" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#f59e0b"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Âmbar Atenção</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#f59e0b</span>
+              <span class="mt-1 block text-xs text-slate-400">Atenção (!)</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#ef4444" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-28 rounded-t-2xl" style="background:#ef4444"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Vermelho Alerta</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#ef4444</span>
+              <span class="mt-1 block text-xs text-slate-400">Fora do padrão (✗)</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- NEUTRAL -->
+        <h3 class="mt-12 text-sm font-bold uppercase tracking-[0.12em] text-slate-500">Neutral</h3>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <button type="button" data-hex="#ffffff" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-24 rounded-t-2xl border-b border-ink-600/10" style="background:#ffffff"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Branco</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#ffffff</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#f8fafc" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-24 rounded-t-2xl border-b border-ink-600/10" style="background:#f8fafc"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Gray 50</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#f8fafc</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#f1f5f9" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-24 rounded-t-2xl border-b border-ink-600/10" style="background:#f1f5f9"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Gray 100</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#f1f5f9</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#475569" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-24 rounded-t-2xl" style="background:#475569"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Gray 600</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#475569</span>
+            </span>
+          </button>
+          <button type="button" data-hex="#0f172a" class="swatch group rounded-2xl border border-ink-600/10 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-action-blue">
+            <span class="block h-24 rounded-t-2xl" style="background:#0f172a"></span>
+            <span class="block rounded-b-2xl bg-white p-4">
+              <span class="block font-semibold text-ink-900">Gray 900</span>
+              <span class="mt-1 block font-mono text-sm text-ink-600 group-hover:text-action-blue">#0f172a</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [5] TIPOGRAFIA                                                -->
+    <!-- ============================================================ -->
+    <section id="tipografia" class="bg-white py-20 md:py-28" aria-labelledby="tipo-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-action-blue">04 · Tipografia</p>
+        <h2 id="tipo-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">Escala tipográfica</h2>
+        <p class="mt-4 max-w-2xl text-ink-600">Fonte primária <span class="font-semibold text-ink-900">Geist</span>, fallback <span class="font-semibold text-ink-900">Inter</span> (Google Fonts). Specimens em tamanho real.</p>
+
+        <div class="mt-12 divide-y divide-ink-600/10">
+          <!-- H1 -->
+          <div class="grid gap-3 py-8 md:grid-cols-[160px_1fr] md:gap-8">
+            <span class="font-mono text-xs text-slate-400">H1 · 72px / 800</span>
+            <p class="text-5xl font-extrabold leading-[1.02] tracking-tightest text-ink-900 md:text-[72px]">Inteligência Operacional do Mundo Físico</p>
+          </div>
+          <!-- H2 -->
+          <div class="grid gap-3 py-8 md:grid-cols-[160px_1fr] md:gap-8">
+            <span class="font-mono text-xs text-slate-400">H2 · 48px / 700</span>
+            <p class="text-4xl font-bold tracking-tighter2 text-ink-900 md:text-5xl">Suas câmeras já gravam. A GoDados lê.</p>
+          </div>
+          <!-- H3 -->
+          <div class="grid gap-3 py-8 md:grid-cols-[160px_1fr] md:gap-8">
+            <span class="font-mono text-xs text-slate-400">H3 · 32px / 600</span>
+            <p class="text-2xl font-semibold tracking-tight text-ink-900 md:text-[32px]">Três passos. Nenhuma câmera nova.</p>
+          </div>
+          <!-- Body Large -->
+          <div class="grid gap-3 py-8 md:grid-cols-[160px_1fr] md:gap-8">
+            <span class="font-mono text-xs text-slate-400">Body Large · 20px</span>
+            <p class="max-w-2xl text-xl leading-body text-ink-600">Transformamos as câmeras de segurança que você já tem em sensores de inteligência operacional — KPIs de conformidade em tempo real, sem instalar uma única câmera nova.</p>
+          </div>
+          <!-- Body -->
+          <div class="grid gap-3 py-8 md:grid-cols-[160px_1fr] md:gap-8">
+            <span class="font-mono text-xs text-slate-400">Body · 16px</span>
+            <p class="max-w-2xl text-base leading-body text-ink-600">O software interpreta o que acontece em cada câmera continuamente — presença, fluxo, conformidade — e classifica em tempo real, com prova em vídeo para cada evento registrado.</p>
+          </div>
+          <!-- Label -->
+          <div class="grid gap-3 py-8 md:grid-cols-[160px_1fr] md:gap-8">
+            <span class="font-mono text-xs text-slate-400">Label · 12px / 600 / UPPER</span>
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-elec">Inteligência Operacional</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [6] BRAND VOICE                                              -->
+    <!-- ============================================================ -->
+    <section id="voz" class="bg-navy-deep py-20 text-white md:py-28" aria-labelledby="voz-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-light">05 · Voz</p>
+        <h2 id="voz-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">A voz da marca</h2>
+        <p class="mt-4 max-w-2xl text-slate-300">Falamos a linguagem do chão de fábrica. Número específico antes de adjetivo. Sempre.</p>
+
+        <!-- 5 adjectives -->
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div class="rounded-xl border border-white/10 bg-navy-mid/40 p-6">
+            <p class="text-lg font-bold text-cyan-light">Direto</p>
+            <p class="mt-2 text-sm text-slate-300">Não evasivo. Diz o que faz.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-navy-mid/40 p-6">
+            <p class="text-lg font-bold text-cyan-light">Técnico sem ser inacessível</p>
+            <p class="mt-2 text-sm text-slate-300">Precisão sem jargão vazio.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-navy-mid/40 p-6">
+            <p class="text-lg font-bold text-cyan-light">Confiante sem ser arrogante</p>
+            <p class="mt-2 text-sm text-slate-300">Prova, não promessa.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-navy-mid/40 p-6">
+            <p class="text-lg font-bold text-cyan-light">Operacional</p>
+            <p class="mt-2 text-sm text-slate-300">Fala a língua de quem opera.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-navy-mid/40 p-6">
+            <p class="text-lg font-bold text-cyan-light">Respeitoso</p>
+            <p class="mt-2 text-sm text-slate-300">Respeita a inteligência do comprador B2B.</p>
+          </div>
+        </div>
+
+        <!-- DOs vs DON'Ts -->
+        <div class="mt-12 overflow-hidden rounded-2xl border border-white/10">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="bg-navy-mid/60 text-xs font-bold uppercase tracking-[0.1em]">
+                <th class="px-6 py-4 text-status-ok" scope="col">✅ Escrever</th>
+                <th class="px-6 py-4 text-status-alert" scope="col">❌ Evitar</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-sm md:text-base">
+              <tr>
+                <td class="px-6 py-4 text-slate-100">"Suas câmeras já gravam"</td>
+                <td class="px-6 py-4 text-slate-400">"solução disruptiva"</td>
+              </tr>
+              <tr class="bg-white/[0.02]">
+                <td class="px-6 py-4 text-slate-100">"KPIs de conformidade em tempo real"</td>
+                <td class="px-6 py-4 text-slate-400">"IA avançada de ponta"</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-slate-100">"0 câmeras novas instaladas"</td>
+                <td class="px-6 py-4 text-slate-400">"game-changer"</td>
+              </tr>
+              <tr class="bg-white/[0.02]">
+                <td class="px-6 py-4 text-slate-100">"câmeras que você já tem"</td>
+                <td class="px-6 py-4 text-slate-400">"revolucionário"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [7] COMPONENTES                                              -->
+    <!-- ============================================================ -->
+    <section id="componentes" class="bg-surface-50 py-20 md:py-28" aria-labelledby="comp-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-action-blue">06 · Componentes</p>
+        <h2 id="comp-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">Componentes em uso</h2>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+          <!-- StatusPills -->
+          <div class="rounded-2xl border border-ink-600/10 bg-white p-8">
+            <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">Status Pills</h3>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <span class="pill-ok"><span aria-hidden="true">✓</span> Conforme</span>
+              <span class="pill-warn"><span aria-hidden="true">!</span> Atenção</span>
+              <span class="pill-alert"><span aria-hidden="true">✗</span> Fora do padrão</span>
+            </div>
+            <p class="mt-5 text-sm text-ink-600">Três estados operacionais. O semáforo é o coração visual do produto.</p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="rounded-2xl border border-ink-600/10 bg-white p-8">
+            <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">Botões</h3>
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              <button type="button" class="rounded-lg bg-action-blue px-5 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-action-blue/30">Primary</button>
+              <button type="button" class="rounded-lg border border-navy-deep/30 px-5 py-2.5 text-sm font-semibold text-navy-deep transition-colors hover:bg-navy-deep/5">Secondary</button>
+              <button type="button" class="rounded-lg px-5 py-2.5 text-sm font-semibold text-action-blue transition-colors hover:bg-action-blue/10">Ghost</button>
+            </div>
+            <p class="mt-5 text-sm text-ink-600">Primary navy/cyan para a ação principal. Secondary outline e Ghost para ações de apoio.</p>
+          </div>
+
+          <!-- KPI Card -->
+          <div class="rounded-2xl border border-ink-600/10 bg-white p-8">
+            <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">KPI Card</h3>
+            <div class="mt-5 grid grid-cols-2 gap-4">
+              <div class="rounded-xl bg-navy-deep p-6">
+                <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec">24/7</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">leitura contínua</p>
+              </div>
+              <div class="rounded-xl bg-navy-deep p-6">
+                <p class="text-5xl font-extrabold tracking-tightest text-cyan-elec">0</p>
+                <p class="mt-2 text-xs font-semibold uppercase tracking-[0.08em] text-slate-400">câmeras novas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini-dashboard -->
+          <div class="rounded-2xl border border-ink-600/10 bg-white p-8">
+            <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">Mini-dashboard</h3>
+            <div class="mt-5 rounded-xl border border-white/10 bg-navy-deep p-3">
+              <div class="mb-3 flex items-center justify-between px-1">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Painel GoDados</span>
+                <span class="flex items-center gap-1.5 text-xs text-status-ok"><span class="h-2 w-2 animate-pulse rounded-full bg-status-ok"></span>AO VIVO</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="cam-feed relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                  <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                  <span class="absolute left-1.5 top-1.5 font-mono text-[9px] text-slate-500">CAM 01</span>
+                  <span class="status-pill-ok absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✓</span> Conforme</span>
+                </div>
+                <div class="cam-feed relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                  <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                  <span class="absolute left-1.5 top-1.5 font-mono text-[9px] text-slate-500">CAM 02</span>
+                  <span class="status-pill-warn absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">!</span> Atenção</span>
+                </div>
+                <div class="cam-feed relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                  <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                  <span class="absolute left-1.5 top-1.5 font-mono text-[9px] text-slate-500">CAM 03</span>
+                  <span class="status-pill-alert absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✗</span> Fora do padrão</span>
+                </div>
+                <div class="cam-feed relative aspect-video overflow-hidden rounded-lg border border-white/10 bg-navy-deep">
+                  <span class="cam-corner cam-tl"></span><span class="cam-corner cam-tr"></span><span class="cam-corner cam-bl"></span><span class="cam-corner cam-br"></span>
+                  <span class="absolute left-1.5 top-1.5 font-mono text-[9px] text-slate-500">CAM 04</span>
+                  <span class="status-pill-ok absolute bottom-1.5 left-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"><span aria-hidden="true">✓</span> Conforme</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- [8] APLICAÇÕES                                               -->
+    <!-- ============================================================ -->
+    <section id="aplicacoes" class="bg-white py-20 md:py-28" aria-labelledby="aplic-h2">
+      <div class="mx-auto max-w-content px-6 md:px-8">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-action-blue">07 · Aplicações</p>
+        <h2 id="aplic-h2" class="max-w-3xl text-3xl font-bold tracking-tighter2 md:text-5xl">A marca aplicada</h2>
+
+        <!-- Slide -->
+        <div class="mt-12">
+          <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">Slide de apresentação</h3>
+          <div class="mt-4 relative aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border border-ink-600/10 bg-navy-deep shadow-xl">
+            <div class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-cyan-elec/15 blur-3xl" aria-hidden="true"></div>
+            <div class="relative flex h-full flex-col justify-between p-8 md:p-12">
+              <div class="flex items-center gap-2.5">
+                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+                  <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+                </svg>
+                <span class="text-sm font-bold text-white">GoDados<span class="text-cyan-elec">.cam</span></span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-light">Inteligência Operacional</p>
+                <p class="mt-3 text-2xl font-extrabold tracking-tighter2 text-white md:text-4xl">Suas câmeras já gravam.<br>A GoDados lê.</p>
+              </div>
+              <p class="text-xs text-slate-400">godados.cam · 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business card -->
+        <div class="mt-16">
+          <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">Cartão de visita</h3>
+          <div class="mt-4 grid gap-6 sm:grid-cols-2 sm:max-w-2xl">
+            <!-- front -->
+            <div class="relative aspect-[1.75/1] overflow-hidden rounded-xl bg-navy-deep p-6 shadow-lg">
+              <div class="pointer-events-none absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-cyan-elec/15 blur-2xl" aria-hidden="true"></div>
+              <div class="relative flex h-full flex-col justify-between">
+                <svg width="120" height="30" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GoDados.cam">
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+                  <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+                  <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <text x="46" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#ffffff">GoDados</text>
+                  <text x="122" y="25" font-family="'Geist','Inter',sans-serif" font-size="18" font-weight="700" fill="#06b6d4">.cam</text>
+                </svg>
+                <p class="text-xs uppercase tracking-[0.14em] text-slate-400">Inteligência Operacional do Mundo Físico</p>
+              </div>
+            </div>
+            <!-- back -->
+            <div class="relative aspect-[1.75/1] overflow-hidden rounded-xl border border-ink-600/10 bg-white p-6 shadow-lg">
+              <div class="flex h-full flex-col justify-between">
+                <div>
+                  <p class="text-base font-bold text-ink-900">Nome Sobrenome</p>
+                  <p class="text-sm text-cyan-elec">Diretor de Operações</p>
+                </div>
+                <div class="text-xs text-ink-600">
+                  <p>contato@godados.ai</p>
+                  <p class="font-mono">godados.cam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email signature -->
+        <div class="mt-16">
+          <h3 class="text-sm font-bold uppercase tracking-[0.1em] text-slate-500">Assinatura de e-mail</h3>
+          <div class="mt-4 max-w-md rounded-xl border border-ink-600/10 bg-white p-5 shadow-sm">
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy-deep">
+                <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+                  <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+                  <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="border-l-2 border-cyan-elec pl-4">
+                <p class="text-sm font-bold text-ink-900">Nome Sobrenome</p>
+                <p class="text-xs text-ink-600">Diretor de Operações · <span class="font-semibold text-navy-deep">GoDados<span class="text-cyan-elec">.cam</span></span></p>
+                <p class="mt-1 text-xs text-ink-600">contato@godados.ai · godados.cam</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- ============================================================== -->
-  <!-- [8] FOOTER                                                      -->
+  <!-- FOOTER                                                         -->
   <!-- ============================================================== -->
-  <footer class="bg-navy-deep py-14" aria-label="Rodapé">
+  <footer class="bg-navy-deep py-14 text-white" aria-label="Rodapé">
     <div class="mx-auto max-w-content px-6 md:px-8">
-      <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
-        <div>
-          <div class="flex items-center gap-2.5">
-            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-              <title>GoDados.cam</title>
-              <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
-              <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
-              <line x1="20" y1="4" x2="20" y2="10" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="20" y1="30" x2="20" y2="36" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="4" y1="20" x2="10" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="30" y1="20" x2="36" y2="20" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-            <span class="text-lg font-bold"><span class="text-white">GoDados</span><span class="text-cyan-elec">.cam</span></span>
-          </div>
-          <p class="mt-4 max-w-xs text-sm text-slate-400">Inteligência Operacional do Mundo Físico</p>
+      <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div class="flex items-center gap-2.5">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
+            <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+          </svg>
+          <span class="text-lg font-bold">GoDados<span class="text-cyan-elec">.cam</span> <span class="ml-1 text-xs font-medium uppercase tracking-[0.14em] text-slate-400">Brand Book v1.0</span></span>
         </div>
-
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Produto</p>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a href="#como-funciona" class="text-slate-300 transition-colors hover:text-cyan-elec">Como funciona</a></li>
-            <li><a href="#casos" class="text-slate-300 transition-colors hover:text-cyan-elec">Casos de uso</a></li>
-            <li><a href="#resultados" class="text-slate-300 transition-colors hover:text-cyan-elec">Resultados</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Empresa</p>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a href="#problema" class="text-slate-300 transition-colors hover:text-cyan-elec">Problema</a></li>
-            <li><a href="#contato" class="text-slate-300 transition-colors hover:text-cyan-elec">Sobre</a></li>
-            <li><a href="#contato" class="text-slate-300 transition-colors hover:text-cyan-elec">LGPD</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Contato</p>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li><a id="footerWhatsapp" data-lead="whatsapp" href="#" class="text-slate-300 transition-colors hover:text-cyan-elec">WhatsApp</a></li>
-            <li><a id="footerEmail" data-lead="email" href="#" class="text-slate-300 transition-colors hover:text-cyan-elec">contato@godados.ai</a></li>
-          </ul>
-        </div>
+        <p class="text-sm text-slate-400">Inteligência Operacional do Mundo Físico</p>
       </div>
-
-      <div class="mt-12 border-t border-white/10 pt-6 text-sm text-slate-500">
-        © 2026 GoDados.cam · Suas câmeras já gravam. A GoDados lê.
+      <div class="mt-10 border-t border-white/10 pt-6 text-sm text-slate-500">
+        © 2026 GoDados.cam · Guia de Identidade Visual · Documento interno de referência de marca
       </div>
     </div>
   </footer>
 
-  <script src="./main.js" defer></script>
+  <!-- ============================================================== -->
+  <!-- JS — copy hex to clipboard                                      -->
+  <!-- ============================================================== -->
+  <script>
+    (function () {
+      function flash(el) {
+        el.classList.add('copied');
+        setTimeout(function () { el.classList.remove('copied'); }, 1000);
+      }
+      function copyHex(hex, el) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(hex).then(function () { flash(el); }).catch(function () { fallback(hex, el); });
+        } else {
+          fallback(hex, el);
+        }
+      }
+      function fallback(hex, el) {
+        var ta = document.createElement('textarea');
+        ta.value = hex;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); flash(el); } catch (e) { /* noop */ }
+        document.body.removeChild(ta);
+      }
+      document.querySelectorAll('.swatch').forEach(function (btn) {
+        var hex = btn.getAttribute('data-hex');
+        btn.setAttribute('aria-label', 'Copiar ' + hex);
+        btn.addEventListener('click', function () { copyHex(hex, btn); });
+      });
+    })();
+  </script>
 </body>
 </html>
