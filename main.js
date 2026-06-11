@@ -9,8 +9,8 @@
   /* --- Centralized config (mutable values live here only) ----------------- */
   var CONFIG = {
     GA4_ID: "G-XXXXXXXXXX",
-    WHATSAPP: "5511999999999", // international format, digits only
-    EMAIL: "contato@godados.cam",
+    WHATSAPP: "5549991079715", // international format, digits only
+    EMAIL: "contato@godados.ai",
     WHATSAPP_TEXT: "Olá, quero entender como a GoDados lê minhas câmeras",
     EMAIL_SUBJECT: "Quero conhecer a GoDados",
   };
