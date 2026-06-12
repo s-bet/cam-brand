@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- GoDados.cam — Ícone Instagram 320×320 | Foto de perfil -->
+<!-- Upload: 320×320px | Exibição: circular 110×110px -->
+<!-- Salvar como PNG via browser: abrir o arquivo, Print > Save as PDF, ou usar Inkscape/SVGOMG -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="320" height="320"
+  viewBox="0 0 320 320"
+  fill="none"
+  role="img"
+  aria-label="GoDados.cam — Ícone Instagram"
+>
+  <title>GoDados.cam</title>
+
+  <!-- Fundo navy sólido (Instagram crop circular — margem segura de 10%) -->
+  <rect width="320" height="320" fill="#0f1f35"/>
+
+  <!-- Anel externo — escala ×8 do ícone 40px original -->
+  <circle cx="160" cy="160" r="128" fill="none" stroke="#06b6d4" stroke-width="16"/>
+
+  <!-- Preenchimento intermediário -->
+  <circle cx="160" cy="160" r="64" fill="#06b6d4" opacity="0.18"/>
+
+  <!-- Ponto central (gradiente: blue → cyan) -->
+  <circle cx="160" cy="160" r="32" fill="url(#gradiente-central)"/>
+
+  <!-- Segmentos cardinais (escala ×8) -->
+  <line x1="160" y1="32"  x2="160" y2="80"  stroke="#22d3ee" stroke-width="20" stroke-linecap="round"/>
+  <line x1="160" y1="240" x2="160" y2="288" stroke="#22d3ee" stroke-width="20" stroke-linecap="round"/>
+  <line x1="32"  y1="160" x2="80"  y2="160" stroke="#22d3ee" stroke-width="20" stroke-linecap="round"/>
+  <line x1="240" y1="160" x2="288" y2="160" stroke="#22d3ee" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Segmentos diagonais (escala ×8) -->
+  <line x1="69.6"  y1="69.6"  x2="103.2" y2="103.2" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/>
+  <line x1="216.8" y1="216.8" x2="250.4" y2="250.4" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/>
+  <line x1="250.4" y1="69.6"  x2="216.8" y2="103.2" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/>
+  <line x1="103.2" y1="216.8" x2="69.6"  y2="250.4" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Gradiente do ponto central -->
+  <defs>
+    <linearGradient id="gradiente-central" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+</svg>
