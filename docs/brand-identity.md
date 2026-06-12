@@ -179,17 +179,53 @@ ANTI-PADRÕES (nunca usar):
   → Hype de IA: "IA avançada", "machine learning de ponta"
   → Promessas vagas: "melhore sua operação"
   → Tom infantil: emojis em excesso, linguagem informal demais
-  → "conformidade" e "auditoria" como promessa principal — são subproduto,
-    não a proposta central de valor
+  → "conformidade" e "auditoria" como promessa principal — são subproduto
+  → ABRIR COM MECANISMO TÉCNICO. Headline, assunto, primeira linha e
+    WhatsApp nunca começam por "Vídeo → Evento → Indicador → Decisão".
+    O comprador não acorda pensando no nosso pipeline — acorda com a dor.
+  → Empurrar mecanismo técnico para H5 (dono de CD regional). Ele quer o
+    resultado, não o "como funciona" por dentro.
+
+ESTRUTURA — DOIS TIERS (a regra-mãe):
+
+  CORRETO:   Problema → Impacto → Resultado → (depois) Tecnologia
+  PROIBIDO:  Tecnologia → Funcionalidade → Benefício
+
+  TIER 1 (abertura/conversão): Problema → Impacto → Resultado.
+    Fala a dor operacional do comprador. TODO formato abre aqui.
+  TIER 2 (prova/mecanismo): Vídeo → Evento → Indicador → Decisão.
+    Só entra DEPOIS do resultado afirmado, em blocos "Como Funciona".
 
 PADRÃO (sempre usar):
   → Números específicos antes de adjetivos
   → "câmeras que você já tem" — nunca vender hardware
   → Vocabulário de performance: fluxo, fila, ocupação, produtividade,
     gargalo, decisão proativa — não vocabulário de compliance
-  → O mecanismo em 4 palavras quando explicar o produto: Vídeo → Evento → Indicador → Decisão
-  → Antes/depois operacional concreto (ex: "23% ocupação vs 67% benchmark")
-  → Perguntas que o comprador não consegue responder com confiança
+
+  5 REGRAS DE APLICAÇÃO:
+  1. FRONTEIRA POR FUNÇÃO DO BLOCO (não pela página). Vale para email,
+     ad, WhatsApp e landing: um bloco que "converte" é Tier 1; um bloco
+     que "explica como funciona" é Tier 2.
+  2. SEQUÊNCIA. Tier 2 só aparece depois de dor + resultado já ditos.
+  3. VETO DE FORMATO CURTO. Headline de ad, assunto de email, primeira
+     linha e mensagem de WhatsApp = Tier 1 exclusivo. Zero mecanismo.
+  4. MARCADOR DE AUDIÊNCIA. Tier 2 é opt-in: serve H3 + equipe técnica
+     que pergunta "como vocês fazem isso?". Nunca empurrado a H5.
+  5. APRENDA POR CONTRASTE. Use os exemplos CERTO/ERRADO abaixo —
+     content creator não acerta por regra abstrata, acerta por exemplo.
+
+EXEMPLOS — CERTO vs ERRADO:
+
+  Hero / Landing (H3):
+    ✓ CERTO:  "Sua fila de checkout passa de 8 pessoas 40 vezes por dia.
+              Você descobre isso no fim do mês — ou nunca. A GoDados
+              mostra agora, pelas câmeras que você já tem."
+    ✗ ERRADO: "Pipeline de visão computacional: Vídeo → Evento →
+              Indicador → Decisão para o varejo."
+
+  Ad / Email — assunto (H5):
+    ✓ CERTO:  "Seu CD operou a 23% de ocupação ontem. Você sabia?"
+    ✗ ERRADO: "IA de ponta transforma vídeo em indicadores operacionais."
 ```
 
 ### Tagline
@@ -199,9 +235,10 @@ PADRÃO (sempre usar):
 **Alternativas por contexto:**
 - Para H3 (franquias): `Suas câmeras já gravam performance operacional. A GoDados lê.`
 - Para H5 (CDs): `O que acontece no seu CD enquanto você não está lá.`
-- Para ads: `Vídeo → Evento → Indicador → Decisão.`
+- Para ads: `A fila que você não vê está custando vendas hoje.`
 
 ---
 
 *Brand Identity GoDados.cam | squads/brand | 2026-06-10*  
-*Revisado em 2026-06-11 — alinhamento performance-first (Fase 2 do pipeline de narrativa)*
+*Revisado em 2026-06-11 — alinhamento performance-first (Fase 2 do pipeline de narrativa)*  
+*Revisado em 2026-06-12 — Brand Voice v2 (dois tiers, framework Problema→Impacto→Resultado→Tecnologia)*
