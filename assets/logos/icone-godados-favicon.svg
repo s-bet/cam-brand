@@ -1,20 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- GoDados.cam — Favicon / Ícone Mínimo | Uso: favicon, 16px, 32px, tamanhos muito pequenos -->
+
 <!-- Variante ultra-minimal: só o anel externo + ponto central — legível em 16px -->
+
 <!-- Fonte: index.html <link rel="icon"> linha 20 -->
+
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="40" height="40"
-  viewBox="0 0 40 40"
-  fill="none"
-  role="img"
-  aria-label="GoDados.cam"
->
-  <title>GoDados.cam</title>
-
+   width="40"
+   height="40"
+   viewBox="0 0 40 40"
+   fill="none"
+   role="img"
+   aria-label="GoDados.cam"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="icone-godados-favicon.svg"
+   inkscape:export-filename="icone-godados-favicon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="19.575"
+     inkscape:cx="19.974457"
+     inkscape:cy="20"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title1">GoDados.cam</title>
   <!-- Anel externo -->
-  <circle cx="20" cy="20" r="16" fill="none" stroke="#06b6d4" stroke-width="2"/>
-
+  <circle
+     cx="20"
+     cy="20"
+     r="16"
+     fill="none"
+     stroke="#06b6d4"
+     stroke-width="2"
+     id="circle1" />
   <!-- Ponto central -->
-  <circle cx="20" cy="20" r="4" fill="#06b6d4"/>
+  <circle
+     cx="20"
+     cy="20"
+     r="4"
+     fill="#06b6d4"
+     id="circle2" />
 </svg>
